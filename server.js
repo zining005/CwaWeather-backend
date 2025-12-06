@@ -10,6 +10,12 @@ const PORT = process.env.PORT || 3000;
 const CWA_API_BASE_URL = "https://opendata.cwa.gov.tw/api";
 const CWA_API_KEY = process.env.CWA_API_KEY;
 
+// 加入這幾行來測試
+console.log('=== 測試 .env 設定 ===');
+console.log('API Key:', CWA_API_KEY);
+console.log('API Key 是否存在:', !!CWA_API_KEY);
+console.log('====================');
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -37,7 +43,7 @@ const getKaohsiungWeather = async (req, res) => {
       {
         params: {
           Authorization: CWA_API_KEY,
-          locationName: "宜蘭縣",
+          locationName: "高雄市",
         },
       }
     );
